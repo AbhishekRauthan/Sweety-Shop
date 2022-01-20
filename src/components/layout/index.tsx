@@ -1,4 +1,8 @@
 import React, { FC, useState } from "react";
+
+import Logo from "@components/ui/Logo";
+
+// SVGS
 import CartSVG from "@components/svgs/Cart";
 import CloseSVG from "@components/svgs/Close";
 import MenuSVG from "@components/svgs/Menu";
@@ -8,7 +12,7 @@ const Layout: FC = ({ children }) => {
   return (
     <>
       <header className="bg-orange-500 w-full overflow-visible absolute">
-        <nav className="container mx-auto py-2 px-3 flex justify-between items-start lg:items-center">
+        <nav className="container mx-auto py-2 px-3 flex justify-between items-baseline lg:items-center">
           <div
             onClick={() => {
               setIsClosed(!isClosed);
@@ -22,19 +26,21 @@ const Layout: FC = ({ children }) => {
               className={isClosed ? "hidden" : "h-8 w-8 stroke-slate-50"}
             />
           </div>
-          <ul className="list-none flex flex-col lg:flex-row justify-between lg:flex-grow lg:mr-2 items-baseline ">
+          <ul className="list-none flex flex-col lg:flex-row justify-between lg:flex-grow lg:mr-2 items-center ">
             <li
               className={`${
                 isClosed ? "hidden" : ""
-              } lg:block bg-green-400 mt-2 lg:mt-0 order-2 lg:order1`}
+              } lg:block bg-green-400 lg:flex-grow mt-2 lg:mt-0 order-2 lg:order1`}
             >
               1
             </li>
-            <li className="bg-green-400 order-1 lg:order-2">2</li>
+            <li className="order-1 lg:order-2 lg:mx-1.5">
+              <Logo />
+            </li>
             <li
               className={`${
                 isClosed ? "hidden" : ""
-              } lg:block bg-green-400 mt-2 lg:mt-0 order-3 lg:order-3`}
+              } lg:block bg-green-400 lg:flex-grow mt-2 lg:mt-0 order-3 lg:order-3`}
             >
               3
             </li>
