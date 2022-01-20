@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
-import CartSVG from "./svgs/Cart";
-import CloseSVG from "./svgs/Close";
-import MenuSVG from "./svgs/Menu";
+import CartSVG from "@components/svgs/Cart";
+import CloseSVG from "@components/svgs/Close";
+import MenuSVG from "@components/svgs/Menu";
 
 const Layout: FC = ({ children }) => {
   const [isClosed, setIsClosed] = useState(true);
