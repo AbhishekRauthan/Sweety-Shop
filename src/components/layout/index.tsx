@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-
+import { Link } from "gatsby";
 import Logo from "@components/ui/Logo";
 
 // SVGS
@@ -26,23 +26,47 @@ const Layout: FC = ({ children }) => {
               className={isClosed ? "hidden" : "h-8 w-8 stroke-slate-50"}
             />
           </div>
-          <ul className="list-none flex flex-col lg:flex-row justify-between lg:flex-grow lg:mr-2 items-center ">
+          <ul className="list-none flex flex-col lg:flex-row justify-between lg:flex-grow lg:mr-2 items-center flex-grow">
             <li
               className={`${
-                isClosed ? "hidden" : ""
-              } lg:block bg-green-400 lg:flex-grow mt-2 lg:mt-0 order-2 lg:order1`}
+                isClosed ? "hidden" : "flex"
+              } lg:flex justify-evenly items-baseline  w-full flex-grow mt-2 lg:mt-0 order-2 lg:order1`}
             >
-              1
+              <Link
+                to="/about"
+                className="text-2xl capitalize underline underline-offset-2 lg:no-underline lg:hover:underline decoration-amber-200 text-slate-50 font-openSans"
+              >
+                About
+              </Link>
+              <Link
+                to="/menu"
+                className="text-2xl capitalize underline underline-offset-2 lg:no-underline lg:hover:underline decoration-amber-200 text-slate-50 font-openSans"
+              >
+                our menu
+              </Link>
             </li>
             <li className="order-1 lg:order-2 lg:mx-1.5">
-              <Logo />
+              <Link to="/">
+                <Logo />
+              </Link>
             </li>
             <li
               className={`${
-                isClosed ? "hidden" : ""
-              } lg:block bg-green-400 lg:flex-grow mt-2 lg:mt-0 order-3 lg:order-3`}
+                isClosed ? "hidden" : "flex"
+              } lg:flex justify-evenly items-baseline flex-grow w-full mt-2 lg:mt-0 order-3 lg:order-3`}
             >
-              3
+              <Link
+                to="/contact"
+                className="text-2xl capitalize underline underline-offset-2 lg:no-underline lg:hover:underline decoration-amber-200 text-slate-50 font-openSans"
+              >
+                Contact us
+              </Link>
+              <Link
+                to="/near"
+                className="text-2xl capitalize underline underline-offset-2 lg:no-underline lg:hover:underline decoration-amber-200 text-slate-50 font-openSans"
+              >
+                near you
+              </Link>
             </li>
           </ul>
           <div className="flex items-center">
