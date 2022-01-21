@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
-import { Link } from "gatsby";
+import Link from "@components/ui/Link";
 import Logo from "@components/ui/Logo";
-
+import NavLinkCon from "./NavLinkCon";
 // SVGS
 import CartSVG from "@components/svgs/Cart";
 import CloseSVG from "@components/svgs/Close";
@@ -27,46 +27,22 @@ const Layout: FC = ({ children }) => {
             />
           </div>
           <ul className="list-none flex flex-col lg:flex-row justify-between lg:flex-grow lg:mr-2 items-center flex-grow">
-            <li
-              className={`${
-                isClosed ? "hidden" : "flex"
-              } lg:flex justify-evenly items-baseline  w-full flex-grow mt-2 lg:mt-0 order-2 lg:order1`}
-            >
-              <Link
-                to="/about"
-                className="text-2xl capitalize underline underline-offset-2 lg:no-underline lg:hover:underline decoration-amber-200 text-slate-50 font-openSans"
-              >
-                About
-              </Link>
-              <Link
-                to="/menu"
-                className="text-2xl capitalize underline underline-offset-2 lg:no-underline lg:hover:underline decoration-amber-200 text-slate-50 font-openSans"
-              >
-                our menu
-              </Link>
+            <li className="order-2 lg:order1 w-full">
+              <NavLinkCon isClosed={isClosed}>
+                <Link to="/about">About</Link>
+                <Link to="/menu">our menu</Link>
+              </NavLinkCon>
             </li>
             <li className="order-1 lg:order-2 lg:mx-1.5">
               <Link to="/">
                 <Logo />
               </Link>
             </li>
-            <li
-              className={`${
-                isClosed ? "hidden" : "flex"
-              } lg:flex justify-evenly items-baseline flex-grow w-full mt-2 lg:mt-0 order-3 lg:order-3`}
-            >
-              <Link
-                to="/contact"
-                className="text-2xl capitalize underline underline-offset-2 lg:no-underline lg:hover:underline decoration-amber-200 text-slate-50 font-openSans"
-              >
-                Contact us
-              </Link>
-              <Link
-                to="/near"
-                className="text-2xl capitalize underline underline-offset-2 lg:no-underline lg:hover:underline decoration-amber-200 text-slate-50 font-openSans"
-              >
-                near you
-              </Link>
+            <li className="order-3 lg:order-3 w-full">
+              <NavLinkCon isClosed={isClosed}>
+                <Link to="/contact">Contact us</Link>
+                <Link to="/near">near you</Link>
+              </NavLinkCon>
             </li>
           </ul>
           <div className="flex items-center">
